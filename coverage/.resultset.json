@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/forecast_service.rb": {
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/breweries_service.rb": {
         "lines": [
           1,
           1,
@@ -11,8 +11,6 @@
           null,
           1,
           1,
-          1,
-          null,
           null,
           null,
           1,
@@ -90,8 +88,28 @@
         ],
         "branches": {
         }
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/forecast_service.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1628516217
+    "timestamp": 1628529148
   }
 }

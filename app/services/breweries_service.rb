@@ -5,9 +5,7 @@ class BreweriesService
   end
 
   def self.conn
-    Faraday.new(url: 'https://api.openbrewerydb.org/breweries?') do |req|
-      req.params['appid'] = ENV['FORECAST_KEY']
-    end
+    Faraday.new(url:'https://api.openbrewerydb.org/')
   end
 
   private_class_method :conn

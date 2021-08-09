@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openbrewerydb.org/breweries?by_dist=40.692529,-73.990996
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 09 Aug 2021 17:10:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=86400, public
+      Etag:
+      - W/"8d01f9ce70dcbc85d6abddbfa2ede589"
+      X-Request-Id:
+      - f3f62c48-fd38-4a73-9d13-6b68ed0a037f
+      X-Runtime:
+      - '0.041861'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":9722,"obdb_id":"circa-brewing-co-brooklyn","name":"Circa Brewing
+        Co","brewery_type":"brewpub","street":"141 Lawrence St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11201","country":"United States","longitude":"-73.986155","latitude":"40.6917243","phone":"7188580055","website_url":"http://www.circabrewing.co","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":13690,"obdb_id":"randolph-beer-dumbo-brooklyn","name":"Randolph
+        Beer Dumbo","brewery_type":"brewpub","street":"77 Sands St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11201-1431","country":"United
+        States","longitude":"-73.987503","latitude":"40.70005509","phone":"7182983331","website_url":"http://www.randolphbeer.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":15128,"obdb_id":"threes-brewing-brooklyn","name":"Threes
+        Brewing","brewery_type":"micro","street":"333 Douglass St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11217-3115","country":"United
+        States","longitude":"-73.9821529","latitude":"40.6798144","phone":"7185222110","website_url":"http://www.threesbrewing.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":10747,"obdb_id":"folksbier-brooklyn","name":"Folksbier","brewery_type":"regional","street":"101
+        Luquer St # 103","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11231-3308","country":"United
+        States","longitude":"-74.00099132","latitude":"40.6779358","phone":null,"website_url":"http://www.folksbier.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":14698,"obdb_id":"strong-rope-brewery-brooklyn","name":"Strong
+        Rope Brewery","brewery_type":"micro","street":"574A President St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11215-1019","country":"United
+        States","longitude":"-73.9840898","latitude":"40.6769023","phone":"5857033010","website_url":"http://www.strongropebrewery.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":13248,"obdb_id":"other-half-brewing-company-brooklyn","name":"Other
+        Half Brewing Company","brewery_type":"micro","street":"195 Centre St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11231-3907","country":"United
+        States","longitude":"-73.9991264","latitude":"40.6737903","phone":null,"website_url":null,"updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":11930,"obdb_id":"kelso-beer-company-brooklyn","name":"KelSo
+        Beer Company","brewery_type":"contract","street":"529 Waverly Ave","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11238-2701","country":"United
+        States","longitude":"-73.96564","latitude":"40.68267586","phone":null,"website_url":"http://www.kelsoofbrooklyn.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":11208,"obdb_id":"greenpoint-beer-brooklyn","name":"Greenpoint
+        Beer","brewery_type":"brewpub","street":"7 N 15th St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11222-2838","country":"United
+        States","longitude":"-73.99607617","latitude":"40.66893407","phone":"9177501541","website_url":"http://www.greenpointbeer.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":14345,"obdb_id":"sixpoint-brewery-brooklyn","name":"Sixpoint
+        Brewery","brewery_type":"regional","street":"40 Van Dyke St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11231-1529","country":"United
+        States","longitude":"-74.01191761","latitude":"40.67397255","phone":"3472278676","website_url":"http://www.sixpoint.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":11922,"obdb_id":"keg-lantern-brewing-co-brooklyn","name":"Keg
+        \u0026 Lantern Brewing Co","brewery_type":"brewpub","street":"97 Nassau Ave","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11222-3081","country":"United
+        States","longitude":"-73.95031963","latitude":"40.7241037","phone":"7183895050","website_url":"http://www.kegandlanternbrooklyn.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":10677,"obdb_id":"five-boroughs-brewing-co-brooklyn","name":"Five
+        Boroughs Brewing Co","brewery_type":"micro","street":"215 47th St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11220-1009","country":"United
+        States","longitude":"-74.0144263","latitude":"40.6505216","phone":"7183558575","website_url":"http://www.fiveboroughs.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":11718,"obdb_id":"interboro-spirits-and-ales-brooklyn","name":"Interboro
+        Spirits And Ales","brewery_type":"brewpub","street":"942 Grand St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11211-2707","country":"United
+        States","longitude":"-73.9369567","latitude":"40.7126813","phone":"6462455417","website_url":"http://www.interboro.nyc","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":11782,"obdb_id":"island-to-island-brewery-brooklyn","name":"Island
+        To Island Brewery","brewery_type":"brewpub","street":"642 Rogers Ave","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11226-1502","country":"United
+        States","longitude":"-73.95325995","latitude":"40.6558144","phone":"3479741985","website_url":"http://www.islandtoislandbrewery.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":11227,"obdb_id":"grimm-artisanal-ales-brooklyn","name":"Grimm
+        Artisanal Ales","brewery_type":"micro","street":"990 Metropolitan Ave","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11211-2607","country":"United
+        States","longitude":"-73.93651911","latitude":"40.7142757","phone":null,"website_url":"http://GrimmAles.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":15066,"obdb_id":"third-rail-beer-new-york","name":"Third
+        Rail Beer","brewery_type":"contract","street":"928 Broadway Ste 902","address_2":null,"address_3":null,"city":"New
+        York","state":"New York","county_province":null,"postal_code":"10010-8139","country":"United
+        States","longitude":"-73.9893474","latitude":"40.7400479","phone":null,"website_url":"http://www.thirdrailbeer.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":9214,"obdb_id":"braven-brewing-company-brooklyn-2","name":"Braven
+        Brewing Company","brewery_type":"contract","street":"362 Jefferson St # 320","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11237-2312","country":"United
+        States","longitude":"-73.92464725","latitude":"40.70559895","phone":"9292956673","website_url":"http://www.bravenbrewing.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":11974,"obdb_id":"kings-county-brewers-collective-brooklyn","name":"Kings
+        County Brewers Collective","brewery_type":"micro","street":"381 Troutman St","address_2":null,"address_3":null,"city":"Brooklyn","state":"New
+        York","county_province":null,"postal_code":"11237-2613","country":"United
+        States","longitude":"-73.9236202","latitude":"40.7060306","phone":"7182882891","website_url":"http://www.kcbcbeer.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":13939,"obdb_id":"rockaway-brewing-company-long-island-city","name":"Rockaway
+        Brewing Company","brewery_type":"micro","street":"4601 5th St","address_2":null,"address_3":null,"city":"Long
+        Island City","state":"New York","county_province":null,"postal_code":"11101-5369","country":"United
+        States","longitude":"-73.9573397","latitude":"40.7404088","phone":"7184826528","website_url":"http://www.rockawaybrewco.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":8291,"obdb_id":"alewife-brewing-company-long-island-city","name":"Alewife
+        Brewing Company","brewery_type":"brewpub","street":"514 51st Ave","address_2":null,"address_3":null,"city":"Long
+        Island City","state":"New York","county_province":null,"postal_code":"11101-5879","country":"United
+        States","longitude":"-73.95625257","latitude":"40.74232214","phone":"7189377494","website_url":"http://www.alewife.beer","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"},{"id":15228,"obdb_id":"transmitter-brewing-long-island-city","name":"Transmitter
+        Brewing","brewery_type":"micro","street":"5302 11th St","address_2":null,"address_3":null,"city":"Long
+        Island City","state":"New York","county_province":null,"postal_code":"11101-5917","country":"United
+        States","longitude":"-73.9511062","latitude":"40.7431826","phone":"6463788529","website_url":"http://www.transmitterbrew.com","updated_at":"2018-08-24T00:00:00.000Z","created_at":"2018-07-24T00:00:00.000Z"}]'
+  recorded_at: Mon, 09 Aug 2021 17:10:58 GMT
+recorded_with: VCR 6.0.0

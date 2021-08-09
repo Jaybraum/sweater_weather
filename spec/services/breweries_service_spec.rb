@@ -6,11 +6,8 @@ RSpec.describe BreweriesService do
         it 'returns brewert data', :vcr do
           response = BreweriesService.get_brewery_details(40.692529, -73.990996)
 
-          expect(response).to be_a(Hash)
-          expect(response[:current]).to be_an(Hash)
+          expect(response).to be_a(Array)
           require "pry"; binding.pry
-
-          current = response[:current]
       end
     end
   end
