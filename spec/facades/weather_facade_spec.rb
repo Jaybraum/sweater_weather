@@ -10,5 +10,11 @@ RSpec.describe WeatherFacade do
       expect(details.first.lat).to be_an(Float)
       expect(details.first.lng).to be_a(Float)
     end
+
+    it "gets forecast details", :vcr do
+      details = WeatherFacade.get_forecast_details(40.692529, -73.990996)
+
+      expect(details).to be_an(Array)
+    end
   end
 end
