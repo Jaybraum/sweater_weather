@@ -19,11 +19,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 09 Aug 2021 12:57:59 GMT
+      - Mon, 09 Aug 2021 14:58:24 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '1031'
+      - '1032'
       Access-Control-Allow-Methods:
       - OPTIONS,GET,POST
       Access-Control-Allow-Origin:
@@ -35,13 +35,13 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Mon, 09 Aug 2021 12:57:59 GMT
+      - Mon, 09 Aug 2021 14:58:24 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
       - '0'
       Set-Cookie:
-      - JSESSIONID=0B7D6C1808C1B0BEC736E1EB2CDB94B4; Path=/; HttpOnly
+      - JSESSIONID=5253E9D3EEBD6F5E8D8CA5CA4AD11CA3; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -51,6 +51,6 @@ http_interactions:
       string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"Brooklyn,NY"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Brooklyn","adminArea5Type":"City","adminArea4":"Kings
-        County","adminArea4Type":"County","adminArea3":"NY","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282042076","unknownInput":"","type":"s","latLng":{"lat":40.692529,"lng":-73.990996},"displayLatLng":{"lat":40.692529,"lng":-73.990996},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=aExeEMOqWGa1wk4fGh4jz9ej8KfMXxKd&type=map&size=225,160&locations=40.692529,-73.990996|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1647821246"}]}]}'
-  recorded_at: Mon, 09 Aug 2021 12:57:59 GMT
+        County","adminArea4Type":"County","adminArea3":"NY","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282042076","unknownInput":"","type":"s","latLng":{"lat":40.692529,"lng":-73.990996},"displayLatLng":{"lat":40.692529,"lng":-73.990996},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=aExeEMOqWGa1wk4fGh4jz9ej8KfMXxKd&type=map&size=225,160&locations=40.692529,-73.990996|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-1065991558"}]}]}'
+  recorded_at: Mon, 09 Aug 2021 14:58:24 GMT
 recorded_with: VCR 6.0.0
