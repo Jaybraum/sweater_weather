@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/location_service.rb": {
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/forecast_service.rb": {
         "lines": [
           1,
           1,
@@ -28,6 +28,41 @@
         "branches": {
         }
       },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/facades/weather_facade.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/coordinate.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/controllers/application_controller.rb": {
         "lines": [
           0,
@@ -35,8 +70,28 @@
         ],
         "branches": {
         }
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/location_service.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1628508545
+    "timestamp": 1628516217
   }
 }

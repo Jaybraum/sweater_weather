@@ -3,74 +3,99 @@ require 'rails_helper'
 RSpec.describe ForecastService do
   describe 'class methods' do
       describe '::get_forecast_details' do
-        it 'returns forecast data' do
-          response = ForecastService.get_cocktail_details(11008)
+        it 'returns forecast data', :vcr do
+          response = ForecastService.get_forecast_details(40.692529, -73.990996)
 
-          expect(response).to be_a Hash
-          expect(response[:drinks]).to be_an Array
+          expect(response).to be_a(Hash)
+          expect(response[:current]).to be_an(Hash)
 
-          manhattan = response[:drinks].first
+          current = response[:current]
 
-          expect(manhattan[:idDrink]).to be_a String
-          expect(manhattan[:idDrink]).to eq('11008')
+          expect(current[:dt]).to be_a(Integer)
+          expect(current[:sunrise]).to be_a(Integer)
+          expect(current[:sunset]).to be_a(Integer)
+          expect(current[:temp]).to be_a(Float)
+          expect(current[:feels_like]).to be_a(Float)
+          expect(current[:pressure]).to be_a(Integer)
+          expect(current[:humidity]).to be_a(Integer)
+          expect(current[:dew_point]).to be_a(Float)
+          expect(current[:uvi]).to be_a(Float)
+          expect(current[:clouds]).to be_a(Integer)
+          expect(current[:visibility]).to be_a(Integer)
+          expect(current[:wind_speed]).to be_a(Float)
+          expect(current[:wind_deg]).to be_a(Integer)
 
-          expect(manhattan[:strDrink]).to be_a String
-          expect(manhattan[:strDrink]).to eq('Manhattan')
-          expect(manhattan[:strInstructions]).to be_a String
-          expect(manhattan[:strInstructions]).to eq('Stirred over ice, strained into a chilled glass, garnished, and served up.')
+          expect(response[:current][:weather]).to be_an(Array)
+          weather = response[:current][:weather][0]
 
-          expect(manhattan[:strDrinkThumb]).to be_a String
-          expect(manhattan[:strDrinkThumb]).to eq('https://www.thecocktaildb.com/images/media/drink/yk70e31606771240.jpg')
+          expect(weather[:id]).to be_a(Integer)
+          expect(weather[:main]).to be_a(String)
+          expect(weather[:description]).to be_a(String)
+          expect(weather[:icon]).to be_a(String)
 
-          expect(manhattan[:strIngredient1]).to be_a String
-          expect(manhattan[:strIngredient1]).to eq('Sweet Vermouth')
+          hourly = response[:hourly][0]
 
-          expect(manhattan[:strMeasure1]).to be_a String
-          expect(manhattan[:strMeasure1]).to eq('3/4 oz ')
-        end
-      end
-    end
+          expect(hourly[:dt]).to be_a(Integer)
+          expect(hourly[:temp]).to be_a(Float)
+          expect(hourly[:feels_like]).to be_a(Float)
+          expect(hourly[:pressure]).to be_a(Integer)
+          expect(hourly[:humidity]).to be_a(Integer)
+          expect(hourly[:dew_point]).to be_a(Float)
+          expect(hourly[:uvi]).to be_a(Float)
+          expect(hourly[:clouds]).to be_a(Integer)
+          expect(hourly[:visibility]).to be_a(Integer)
+          expect(hourly[:wind_speed]).to be_a(Float)
+          expect(hourly[:wind_deg]).to be_a(Integer)
 
-    describe '::random_cocktail' do
-      it 'returns data for a random cocktail' do
-        response = CocktailService.random_cocktail
+          expect(response[:hourly][0][:weather]).to be_an(Array)
+          hourly_weather = response[:hourly][0][:weather][0]
 
-        expect(response).to be_a Hash
-        expect(response[:drinks]).to be_an Array
+          expect(hourly_weather[:id]).to be_a(Integer)
+          expect(hourly_weather[:main]).to be_a(String)
+          expect(hourly_weather[:description]).to be_a(String)
+          expect(hourly_weather[:icon]).to be_a(String)
 
-        cocktail = response[:drinks].first
+          daily = response[:daily][0]
 
-        expect(cocktail[:idDrink]).to be_a String
-        expect(cocktail[:strDrink]).to be_a String
-        expect(cocktail[:strInstructions]).to be_a String
-        expect(cocktail[:strDrinkThumb]).to be_a String
-        expect(cocktail[:strIngredient1]).to be_a String
-        expect(cocktail[:strMeasure1]).to be_a String
-      end
-    end
+          expect(daily[:dt]).to be_a(Integer)
+          expect(daily[:sunrise]).to be_a(Integer)
+          expect(daily[:sunset]).to be_a(Integer)
+          expect(daily[:moonrise]).to be_a(Integer)
+          expect(daily[:moonset]).to be_a(Integer)
+          expect(daily[:moon_phase]).to be_a(Float)
 
-    VCR.use_cassette('cocktail search', :record => :new_episodes) do
-      describe '::search_cocktails' do
-        it 'returns search results' do
-          response = CocktailService.search_cocktails('vodka')
+          expect(daily[:temp]).to be_a(Hash)
+          expect(daily[:temp][:day]).to be_a(Float)
+          expect(daily[:temp][:min]).to be_a(Float)
+          expect(daily[:temp][:max]).to be_a(Float)
+          expect(daily[:temp][:night]).to be_a(Float)
+          expect(daily[:temp][:eve]).to be_a(Float)
+          expect(daily[:temp][:morn]).to be_a(Float)
 
-          expect(response).to be_a Hash
-          expect(response[:drinks]).to be_an Array
+          expect(daily[:feels_like]).to be_a(Hash)
+          expect(daily[:feels_like][:day]).to be_a(Float)
+          expect(daily[:feels_like][:night]).to be_a(Float)
+          expect(daily[:feels_like][:eve]).to be_a(Float)
+          expect(daily[:feels_like][:morn]).to be_a(Float)
 
-          long_vodka = response[:drinks].first
+          expect(daily[:pressure]).to be_a(Integer)
+          expect(daily[:humidity]).to be_a(Integer)
+          expect(daily[:dew_point]).to be_a(Float)
+          expect(daily[:wind_speed]).to be_a(Float)
+          expect(daily[:wind_deg]).to be_a(Integer)
 
-          expect(long_vodka).to be_a Hash
-          expect(long_vodka[:idDrink]).to eq('13196')
-          expect(long_vodka[:strDrink]).to eq('Long vodka')
-          expect(long_vodka[:strDrinkThumb]).to eq('https://www.thecocktaildb.com/images/media/drink/9179i01503565212.jpg')
+          expect(response[:daily][0][:weather]).to be_an(Array)
+          daily_weather = response[:daily][0][:weather][0]
 
-          vodka_and_tonic = response[:drinks].second
+          expect(daily_weather[:id]).to be_a(Integer)
+          expect(daily_weather[:main]).to be_a(String)
+          expect(daily_weather[:description]).to be_a(String)
+          expect(daily_weather[:icon]).to be_a(String)
 
-          expect(vodka_and_tonic).to be_a Hash
-          expect(vodka_and_tonic[:idDrink]).to eq('16967')
-          expect(vodka_and_tonic[:strDrink]).to eq('Vodka Fizz')
-          expect(vodka_and_tonic[:strDrinkThumb]).to eq('https://www.thecocktaildb.com/images/media/drink/xwxyux1441254243.jpg')
-        end
+          expect(daily[:clouds]).to be_a(Integer)
+          expect(daily[:pop]).to be_a(Float)
+          expect(daily[:rain]).to be_a(Float)
+          expect(daily[:uvi]).to be_a(Float)
       end
     end
   end
