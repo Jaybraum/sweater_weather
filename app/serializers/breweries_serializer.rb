@@ -1,10 +1,9 @@
 class BreweriesSerializer < ActiveModel::Serializer
   attributes :id, :destination, :summary, :temperature, :brewery_type
 
-  def self.details(data, location)
+  def self.details(data, location, quantity)
   {
     data:
-    data.map do |data|
     {
       id: nil,
       type: 'breweries',
@@ -13,21 +12,20 @@ class BreweriesSerializer < ActiveModel::Serializer
         destination: location,
         forecast:
         {
-          summary: data.current.conditions,
-          temperature: data.current.temperature,
+          summary: data[0].current.conditions,
+          temperature: data[0].current.temperature,
         },
         breweries:
-        data.map do |k, v |
-          require "pry"; binding.pry
+        data.second.first(quantity).map do |data|
         [
           {
-          id: data[1][:id],
-          name: data[1][:name],
-          brewery_type: data[1][:brewery_type]
+          id: data[:id],
+          name: data[:name],
+          brewery_type: data[:brewery_type]
         }
         ]end
       }
-  }end
+  }
 }.to_json
   end
 end
