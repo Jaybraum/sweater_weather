@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Breweies API' do
+RSpec.describe 'Breweries API' do
   describe 'GET /breweries' do
     it "Returns breweries data formatted", :vcr do
       get '/api/v1/breweries', params: {location: 'Brooklyn,NY', quantity: 5}
