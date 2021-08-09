@@ -9,11 +9,11 @@ class Daily
               :icon
 
   def initialize(weather)
-    @date = weather[:dt]
-    @sunrise = weather[:sunrise]
-    @sunset = weather[:sunset]
-    @max_temp = weather[:max_temp]
-    @min_temp = weather[:min_temp]
+    @date = Time.at(weather[:dt]).to_s
+    @sunrise = Time.at(weather[:sunrise]).to_s
+    @sunset = Time.at(weather[:sunset]).to_s
+    @max_temp = weather[:temp][:min]
+    @min_temp = weather[:temp][:max]
     @humidity = weather[:humidity]
     @conditions = weather[:weather][0][:description]
     @icon = weather[:weather][0][:icon]

@@ -5,7 +5,7 @@ class Hourly
               :icon
 
   def initialize(weather)
-    @time = weather[:dt]
+    @time = Time.at(weather[:dt]).to_s
     @temperature = weather[:temp]
     @conditions = weather[:weather][0][:description]
     @icon = weather[:weather][0][:icon]

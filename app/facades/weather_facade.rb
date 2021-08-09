@@ -6,12 +6,12 @@ class WeatherFacade
     end
   end
 
-  def self.get_forecast_details(latitude, longitude)
-    results = ForecastService.get_forecast_details(latitude, longitude)
-    results.map do |weather|
-      Forecast.new(weather)
-    end
-  end
+  # def self.get_forecast_details(latitude, longitude)
+  #   results = ForecastService.get_forecast_details(latitude, longitude)
+  #   results.map do |weather|
+  #     Forecast.new(weather)
+  #   end
+  # end
 
   def self.full_forecast(location)
     coordinates = WeatherFacade.retrieve_coordinates(location)

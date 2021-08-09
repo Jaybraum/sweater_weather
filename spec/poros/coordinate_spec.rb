@@ -1,12 +1,14 @@
 require "rails_helper"
 
 RSpec.describe Coordinate do
-  it "exists" do
-    coordinate_details = {:latLng=>
+  describe '#initialize' do
+    it 'encapsulates coordinates into object' do
+    coordinate_details = {
+      :latLng=>
       {
         :lat=>40.692529,
         :lng=>-73.990996
-        }
+      }
       }
 
     coordinate = Coordinate.new(coordinate_details)
