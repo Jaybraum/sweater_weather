@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe WeatherFacade do
-  describe 'methods' do
+  describe 'Forecast methods' do
     it "::gets_coordinates", :vcr do
       details = WeatherFacade.retrieve_coordinates('Brooklyn,NY')
 
@@ -36,7 +36,7 @@ RSpec.describe WeatherFacade do
       expect(daily.sunrise).to be_a(String)
       expect(daily.sunset).to be_a(String)
       expect(daily.humidity).to be_a(Integer)
-      expect(daily.min_temp).to be_a(Integer)
+      expect(daily.min_temp).to be_a(Float)
       expect(daily.max_temp).to be_a(Float)
 
       hourly = details.hourly[0]
@@ -107,6 +107,18 @@ RSpec.describe WeatherFacade do
       expect(hourly[0].temperature).to be_a(Float)
       expect(hourly[0].conditions).to be_a(String)
       expect(hourly[0].icon).to be_a(String)
+    end
+  end
+
+  describe 'Image methods' do
+    it "::gets_image", :vcr do
+      details = WeatherFacade.retrieve_image('Brooklyn,NY')
+
+      expect(details).to be_an(Array)
+      expect(details.first).to be_an(Image)
+      expect(details.first.author).to be_an(String)
+      expect(details.first.image_url).to be_an(String)
+      expect(details.first.description).to be_an(String)
     end
   end
 end
