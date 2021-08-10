@@ -1,13 +1,30 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/controllers/api/v1/backgrounds_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/facades/weather_facade.rb": {
         "lines": [
           1,
           1,
-          2,
-          2,
-          2,
+          0,
+          0,
+          0,
           null,
           null,
           null,
@@ -19,162 +36,30 @@
           null,
           null,
           1,
-          1,
-          1,
+          0,
+          0,
           null,
-          1,
-          null,
-          null,
-          null,
-          1,
+          0,
           null,
           null,
-          1,
-          2,
+          null,
+          0,
           null,
           null,
           1,
-          2,
-          10,
-          null,
-          null,
-          null,
-          1,
-          2,
-          16,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/location_service.rb": {
-        "lines": [
-          1,
-          1,
-          2,
-          2,
+          0,
           null,
           null,
           1,
-          2,
-          2,
+          0,
+          0,
           null,
           null,
           null,
           1,
-          null
-        ]
-      },
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/coordinate.rb": {
-        "lines": [
-          1,
-          1,
+          0,
+          0,
           null,
-          1,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/forecast_service.rb": {
-        "lines": [
-          1,
-          1,
-          3,
-          3,
-          null,
-          null,
-          1,
-          3,
-          3,
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/current.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/daily.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          10,
-          10,
-          10,
-          10,
-          10,
-          10,
-          10,
-          10,
-          null,
-          null
-        ]
-      },
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/hourly.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          16,
-          16,
-          16,
-          16,
-          null,
-          null
-        ]
-      },
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/forecast.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
           null,
           null
         ]
@@ -208,6 +93,36 @@
           1,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/serializers/image_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -278,8 +193,106 @@
         "branches": {
         }
       },
-      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/controllers/application_controller.rb": {
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/daily.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/hourly.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/current.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/coordinate.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/poros/forecast.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
           0,
           0
         ],
@@ -298,8 +311,48 @@
         ],
         "branches": {
         }
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/location_service.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/Jay/Turing/3module/projects/4_sweater_weather/sweater_weather/app/services/forecast_service.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1628623638
+    "timestamp": 1628624980
   }
 }
