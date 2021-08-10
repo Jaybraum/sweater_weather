@@ -3,31 +3,36 @@ require 'rails_helper'
 RSpec.describe Forecast do
   describe '#initialize' do
     it 'encapsulates forecast data into object' do
-      current = {
-         :dt=>1628542968,
-         :sunrise=>1628503241,
-         :sunset=>1628553736,
-         :temp=>299.46,
-         :feels_like=>299.46,
-         :pressure=>1020,
-         :humidity=>74,
-         :dew_point=>294.46,
-         :uvi=>1.46,
-         :clouds=>40,
-         :visibility=>10000,
-         :wind_speed=>0.45,
-         :wind_deg=>178,
-         :wind_gust=>1.34,
-         :weather=>[{:id=>802, :main=>"Clouds", :description=>"scattered clouds", :icon=>"03d"}]}
-      }
+      daily_forecast = {
+           :dt=>1628528400,
+           :sunrise=>1628503241,
+           :sunset=>1628553736,
+           :moonrise=>1628506200,
+           :moonset=>1628557680,
+           :moon_phase=>0.04,
+           :temp=>{:day=>299.68, :min=>294.62, :max=>300, :night=>297.42, :eve=>299.48, :morn=>294.64},
+           :feels_like=>{:day=>299.68, :night=>297.86, :eve=>299.48, :morn=>295.06},
+           :pressure=>1020,
+           :humidity=>65,
+           :dew_point=>292.57,
+           :wind_speed=>5.14,
+           :wind_deg=>11,
+           :wind_gust=>8.21,
+           :weather=>[{:id=>500, :main=>"Rain", :description=>"light rain", :icon=>"10d"}],
+           :clouds=>77,
+           :pop=>0.6,
+           :rain=>0.66,
+           :uvi=>5.22
+         }
 
-      forecast = Forecast.new(forecast_details)
+      daily = Daily.new(daily_forecast)
 
-      expect(forecast_details.name).to eq('Union Lodge No.1')
-      expect(forecast_details.thumbnail).to eq('https://s3-media2.fl.yelpcdn.com/bphoto/oQcctWaIVGkoE1pKGlHA6Q/o.jpg')
-      expect(forecast_details.address).to eq(['1543 Champa St', 'Denver, CO 80202'])
-      expect(forecast_details.business_type).to eq([{'alias': 'cocktailbars', 'title': 'Cocktail Bars'}, { 'alias': 'lounges', 'title': 'Lounges'}])
-      expect(forecast_details.yelp_link).to eq('https://www.yelp.com/biz/union-lodge-no-1-denver?adjust_creative=9gPw-kuPiDZgFQ3Tr4ox3Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=9gPw-kuPiDZgFQ3Tr4ox3Q')
+      expect(daily.conditions).to be_a(String)
+      expect(daily.date).to be_a(String)
+      expect(daily.sunrise).to be_a(String)
+      expect(daily.sunset).to be_a(String)
+      expect(daily.humidity).to be_a(Integer)
+      expect(daily.min_temp).to be_a(Integer)
     end
   end
 end
