@@ -22,5 +22,18 @@ RSpec.describe 'Sessions API' do
       expect(user_data[:email]).to be_an(String)
       expect(user_data[:api_key]).to be_an(String)
     end
+
+    it 'Returns an error message', :vcr do
+      post '/api/v1/sessions', params: {
+        email: "whatever@example.com",
+        password: 000
+      }
+
+      expect(response).to have_http_status(401)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body).to eq({error: 'Invalid Credentials'})
+    end
   end
 end

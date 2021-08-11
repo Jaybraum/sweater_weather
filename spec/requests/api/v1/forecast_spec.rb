@@ -70,7 +70,7 @@ RSpec.describe 'Forecast API' do
     it 'Returns an error message', :vcr do
       get '/api/v1/forecast', params: {location: ''}
 
-      expect(response).to have_http_status 400
+      expect(response).to have_http_status(400)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
 

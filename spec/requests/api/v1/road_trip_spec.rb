@@ -69,7 +69,7 @@ RSpec.describe 'Roadtrip API' do
         api_key: " "
       }
 
-      expect(response).to have_http_status 403
+      expect(response).to have_http_status(403)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
 
