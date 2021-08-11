@@ -101,8 +101,6 @@ RSpec.describe WeatherFacade do
 
       hourly = WeatherFacade.hourly_forecast(forecast_data[:hourly])
 
-      expect(hourly.count).to eq(8)
-
       expect(hourly[0].time).to be_a(String)
       expect(hourly[0].temperature).to be_a(Float)
       expect(hourly[0].conditions).to be_a(String)

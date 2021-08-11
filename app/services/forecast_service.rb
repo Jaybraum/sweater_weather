@@ -1,6 +1,6 @@
 class ForecastService
   def self.get_forecast_details(latitude, longitude)
-    response = conn.get("onecall?lat=#{latitude}&lon=#{longitude}&exclude=minutely,alerts")
+    response = conn.get("onecall?lat=#{latitude}&lon=#{longitude}&exclude=minutely,alerts&units=imperial")
     JSON.parse(response.body, symbolize_names: true)
   end
 

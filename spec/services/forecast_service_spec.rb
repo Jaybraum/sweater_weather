@@ -41,7 +41,7 @@ RSpec.describe ForecastService do
           expect(hourly[:pressure]).to be_a(Integer)
           expect(hourly[:humidity]).to be_a(Integer)
           expect(hourly[:dew_point]).to be_a(Float)
-          expect(hourly[:uvi]).to be_a(Float)
+          expect(hourly[:uvi]).to be_a(Integer)
           expect(hourly[:clouds]).to be_a(Integer)
           expect(hourly[:visibility]).to be_a(Integer)
           expect(hourly[:wind_speed]).to be_a(Float)

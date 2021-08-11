@@ -9,10 +9,4 @@ class Api::V1::SessionsController < ApplicationController
       render json: {error: 'Invalid Credentials'}, status: 401
     end
   end
-
-  private
-
-  def user_params
-    params.permit(:email, :password)
-  end
 end

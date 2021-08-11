@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Users API' do
   describe 'Post /users' do
     it "Registers users" do
-      post '/api/v1/users', params: {
+      post '/api/v1/users', params:
+      {
         email: 'Jay@test.com',
         password: '123456',
         password_confirmation: '123456'
