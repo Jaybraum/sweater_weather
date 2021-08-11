@@ -32,10 +32,18 @@ class WeatherFacade
   end
 
   def self.retrieve_image(location)
-    results = UnsplashService.get_photo_details(location)[:results]
-    results.map do |image|
-      Image.new(image)
-    end
+    coordinates = WeatherFacade.retrieve_coordinates(location)
+    forecast = ForecastService.get_forecast_details(coordinates.first.lat, coordinates.first.lng)
+    current = current_forecast(forecast[:current]).conditions
+    location_weather = "#{current} #{location}"
+    results = UnsplashService.get_photo_details(location_weather)[:results][0]
+    image_data = {
+      location: location,
+      description: results[:alt_description],
+      image_url: results[:urls][:regular],
+      author: results[:user][:username]
+    }
+    Image.new(image_data)
   end
 
   def self.current_forecast(forecast_data)

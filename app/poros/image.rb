@@ -1,11 +1,14 @@
 class Image
-  attr_reader :description,
+  attr_reader :location,
               :image_url,
+              :description,
               :author
 
   def initialize(image)
+    #require "pry"; binding.pry
+    @location   = image[:location]
     @description = image[:description]
-    @image_url =   image[:urls][:regular]
-    @author =      image[:user][:username]
+    @image_url =   image[:image_url]
+    @author =      image[:author]
   end
 end

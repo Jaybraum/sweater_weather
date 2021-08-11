@@ -2,13 +2,11 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.unsplash.com/search/photos?orientation=landscape&page=1&per_page=1&query=
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=aExeEMOqWGa1wk4fGh4jz9ej8KfMXxKd&location=&maxResults=1
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Authorization:
-      - Client-ID E3nd3h8BZpeWvsO9_kTjl2l8ixKSC002URETU93dcEI
       User-Agent:
       - Faraday v1.6.0
       Accept-Encoding:
@@ -18,64 +16,41 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: ''
     headers:
-      Connection:
-      - keep-alive
+      Date:
+      - Wed, 11 Aug 2021 13:37:15 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
       Content-Length:
-      - '57'
-      Server:
-      - Cowboy
+      - '382'
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
       Access-Control-Allow-Origin:
       - "*"
-      Access-Control-Request-Method:
-      - "*"
-      Access-Control-Allow-Headers:
-      - "*"
-      Access-Control-Expose-Headers:
-      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
       Cache-Control:
-      - no-cache, no-store, must-revalidate
-      Warning:
-      - The tags property in this endpoint is deprecated. https://changelog.unsplash.com/deprecations/2021/07/12/tags-search-deprecation.html
-      X-Total:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
       - '0'
-      X-Per-Page:
-      - '1'
-      Content-Type:
-      - application/json
-      Etag:
-      - W/"7814e74bfa62dcc505522924e3c8cf4b"
-      X-Ratelimit-Limit:
-      - '50'
-      X-Ratelimit-Remaining:
-      - '48'
-      X-Request-Id:
-      - c9a151d9-e092-485f-99ca-0af9d997ebf0
-      X-Runtime:
-      - '0.031846'
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 vegur, 1.1 varnish, 1.1 varnish
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Wed, 11 Aug 2021 11:30:08 GMT
-      Age:
+      Last-Modified:
+      - Wed, 11 Aug 2021 13:37:15 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
       - '0'
-      X-Served-By:
-      - cache-dca17748-DCA, cache-ams21066-AMS
-      X-Cache:
-      - MISS, MISS
-      X-Cache-Hits:
-      - 0, 0
-      X-Timer:
-      - S1628681409.529035,VS0,VE143
-      Vary:
-      - Accept-Encoding, Origin,Authorization,client-geo-region
+      Set-Cookie:
+      - JSESSIONID=83BC9BF03A6AA5201695E26FB2AB048C; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '0.0'
     body:
-      encoding: ASCII-8BIT
-      string: '{"total":0,"total_pages":0,"results":[]}'
-  recorded_at: Wed, 11 Aug 2021 11:30:08 GMT
+      encoding: UTF-8
+      string: '{"info":{"statuscode":400,"copyright":{"text":"\u00A9 2021 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2021 MapQuest, Inc."},"messages":["Illegal argument from request: Insufficient
+        info for location"]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":""},"locations":[]}]}'
+  recorded_at: Wed, 11 Aug 2021 13:37:15 GMT
 recorded_with: VCR 6.0.0

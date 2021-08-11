@@ -117,11 +117,11 @@ RSpec.describe WeatherFacade do
     it "::gets_image", :vcr do
       details = WeatherFacade.retrieve_image('Brooklyn,NY')
 
-      expect(details).to be_an(Array)
-      expect(details.first).to be_an(Image)
-      expect(details.first.author).to be_an(String)
-      expect(details.first.image_url).to be_an(String)
-      expect(details.first.description).to be_an(String)
+      expect(details).to be_an(Image)
+      expect(details.location).to be_an(String)
+      expect(details.author).to be_an(String)
+      expect(details.image_url).to be_an(String)
+      expect(details.description).to be_an(String)
     end
   end
 

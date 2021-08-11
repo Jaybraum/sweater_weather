@@ -1,7 +1,7 @@
 class ImageSerializer < ActiveModel::Serializer
-  attributes :author, :image_url, :description
+  attributes :author, :image_url, :description, :location
 
-  def self.details(data, location)
+  def self.details(data)
     {
       data:
       {
@@ -10,14 +10,14 @@ class ImageSerializer < ActiveModel::Serializer
         attributes: {
           image:
           {
-            location: location,
-            image_url: data.first.image_url,
-            description: data.first.description
+            location: data.location,
+            image_url: data.image_url,
+            description: data.description
           },
           credit:
           {
             source: 'unsplash.com',
-            author: data.first.author
+            author: data.author
           }
         }
       }
