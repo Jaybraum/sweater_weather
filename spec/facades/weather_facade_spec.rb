@@ -2,15 +2,6 @@ require 'rails_helper'
 
 RSpec.describe WeatherFacade do
   describe 'Forecast methods' do
-    it "::gets_coordinates", :vcr do
-      details = WeatherFacade.retrieve_coordinates('Brooklyn,NY')
-
-      expect(details).to be_an(Array)
-      expect(details.first).to be_an(Coordinate)
-      expect(details.first.lat).to be_an(Float)
-      expect(details.first.lng).to be_a(Float)
-    end
-
     it "::get_full_forecast", :vcr do
       details = WeatherFacade.full_forecast('Brooklyn,NY')
 
@@ -108,6 +99,20 @@ RSpec.describe WeatherFacade do
     end
   end
 
+  describe 'Road_Trip methods' do
+    it "::get_road_trip", :vcr do
+      details = WeatherFacade.road_trip('Brooklyn, NY', 'Miami, FL')
+
+      expect(details).to be_an(RoadTrip)
+
+      expect(details.origin).to be_an(String)
+      expect(details.destination).to be_an(String)
+      expect(details.conditions).to be_an(String)
+      expect(details.temperature).to be_an(Float)
+      expect(details.travel_time).to be_an(String)
+    end
+  end
+
   describe 'Image methods' do
     it "::gets_image", :vcr do
       details = WeatherFacade.retrieve_image('Brooklyn,NY')
@@ -117,6 +122,17 @@ RSpec.describe WeatherFacade do
       expect(details.first.author).to be_an(String)
       expect(details.first.image_url).to be_an(String)
       expect(details.first.description).to be_an(String)
+    end
+  end
+
+  describe 'Coordinate methods' do
+    it "::gets_coordinates", :vcr do
+      details = WeatherFacade.retrieve_coordinates('Brooklyn,NY')
+
+      expect(details).to be_an(Array)
+      expect(details.first).to be_an(Coordinate)
+      expect(details.first.lat).to be_an(Float)
+      expect(details.first.lng).to be_a(Float)
     end
   end
 end

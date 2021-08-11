@@ -24,5 +24,15 @@ RSpec.describe 'Background API' do
       expect(credit_data[:source]).to eq('unsplash.com')
       expect(credit_data[:author]).to be_an(String)
     end
+
+    it 'Returns an error message', :vcr do
+      get '/api/v1/backgrounds', params: {location: ''}
+
+      expect(response).to have_http_status 400
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body).to eq({error: 'Location Missing'})
+    end
   end
 end

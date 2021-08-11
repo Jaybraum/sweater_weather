@@ -1,18 +1,4 @@
 class WeatherFacade
-  def self.retrieve_coordinates(location)
-    results = LocationService.get_location_details(location)[:results][0][:locations]
-    results.map do |coordinate|
-      Coordinate.new(coordinate)
-    end
-  end
-
-  def self.retrieve_image(location)
-    results = UnsplashService.get_photo_details(location)[:results]
-    results.map do |image|
-      Image.new(image)
-    end
-  end
-
   def self.road_trip(origin, destination)
     route_time = DirectionService.get_direction_details(origin, destination)[:route][:formattedTime]
     coordinates = WeatherFacade.retrieve_coordinates(destination)
@@ -36,6 +22,20 @@ class WeatherFacade
       hourly: hourly_forecast(forecast[:hourly][0..7])
     }
     Forecast.new(forecast_data)
+  end
+
+  def self.retrieve_coordinates(location)
+    results = LocationService.get_location_details(location)[:results][0][:locations]
+    results.map do |coordinate|
+      Coordinate.new(coordinate)
+    end
+  end
+
+  def self.retrieve_image(location)
+    results = UnsplashService.get_photo_details(location)[:results]
+    results.map do |image|
+      Image.new(image)
+    end
   end
 
   def self.current_forecast(forecast_data)
