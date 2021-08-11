@@ -13,7 +13,7 @@
 * Rails version: 5.2.5
 
 ## Overview
-Sweater Weather is a project to consume and expose internal and external APIs. It's main function is to provide a Front End application weather and travel data fir a hypothetical road trip.
+Sweater Weather is a project to consume and expose internal and external APIs. It's main function is to provide a Front End application weather and travel data for a hypothetical road trip.
 
 Primary Learning goals:
 * Expose an API that aggregates data from multiple external APIs
