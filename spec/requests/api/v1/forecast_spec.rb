@@ -42,5 +42,39 @@ RSpec.describe 'Forecast API' do
       expect(hourly_forecast[0][0][:conditions]).to be_an(String)
       expect(hourly_forecast[0][0][:icon]).to be_an(String)
     end
+
+    it 'Returns only requested data', :vcr do
+      get '/api/v1/forecast', params: {location: 'Brooklyn,NY'}
+
+      expect(response).to have_http_status(200)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+
+      current_forecast = data[:data][:attributes][:current_weather]
+      daily_forecast = data[:data][:attributes][:daily_weather][0][0]
+      hourly_forecast = data[:data][:attributes][:hourly_weather][0][0]
+
+      expect(current_forecast).not_to include([:dew_point])
+      expect(current_forecast).not_to include([:wind_deg])
+      expect(current_forecast).not_to include([:wind_gust])
+
+      expect(daily_forecast).not_to include([:clouds])
+      expect(daily_forecast).not_to include([:pop])
+      expect(daily_forecast).not_to include([:rain])
+
+      expect(hourly_forecast).not_to include([:pop])
+      expect(hourly_forecast).not_to include([:pressure])
+      expect(hourly_forecast).not_to include([:visibility])
+    end
+
+    it 'Returns an error message', :vcr do
+      get '/api/v1/forecast', params: {location: ''}
+
+      expect(response).to have_http_status 400
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body).to eq({error: 'Location Missing'})
+    end
   end
 end

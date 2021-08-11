@@ -6,7 +6,7 @@ class Api::V1::BackgroundsController < ApplicationController
     if params[:location].blank?
       render json: { error: 'Location Missing' }, status: 400
     else
-     render json: ImageSerializer.details(image, params[:location])
-   end
+      render json: ImageSerializer.details(image, params[:location])
+    end
   end
 end
