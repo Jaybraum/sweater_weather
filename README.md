@@ -13,7 +13,7 @@
 * Rails version: 5.2.5
 
 ## Overview
-Sweater Weather is a project to consume and expose internal and external APIs. It's main function is to provide a Front End application weather and travel data fir a hypothetical road trip.
+Sweater Weather is a project to consume and expose internal and external APIs. It's main function is to provide a Front End application weather and travel data for a hypothetical road trip.
 
 Primary Learning goals:
 * Expose an API that aggregates data from multiple external APIs
@@ -26,23 +26,23 @@ Primary Learning goals:
 
 ### Retrieve weather for a city
 
-''''
+````
 GET /api/v1/forecast?location=denver,co
 Content-Type: application/json
 Accept: application/json
-''''
+````
 
 ### Background Image for the City
 
-''''
+````
 GET /api/v1/backgrounds?location=denver,co
 Content-Type: application/json
 Accept: application/json
-''''
+````
 
 ### User Registration
 
-''''
+````
 POST /api/v1/users
 Content-Type: application/json
 Accept: application/json
@@ -52,11 +52,11 @@ Accept: application/json
   "password": "password",
   "password_confirmation": "password"
 }
-''''
+````
 
 #### Login
 
-''''
+````
 POST /api/v1/sessions
 Content-Type: application/json
 Accept: application/json
@@ -65,11 +65,11 @@ Accept: application/json
   "email": "whatever@example.com",
   "password": "password"
 }
-''''
+````
 
 #### Road Trip
 
-''''
+````
 POST /api/v1/road_trip
 Content-Type: application/json
 Accept: application/json
@@ -81,4 +81,4 @@ body:
   "destination": "Pueblo,CO",
   "api_key": "jgn983hy48thw9begh98h4539h4"
 } 
-''''
+````
