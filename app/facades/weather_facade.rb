@@ -8,7 +8,7 @@ class WeatherFacade
       origin: origin,
       destination: destination,
       travel_time: route_time,
-      weather_eta: weather_hour,
+      weather_eta: weather_hour
     }
     RoadTrip.new(trip_data)
   end

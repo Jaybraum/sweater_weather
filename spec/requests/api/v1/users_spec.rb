@@ -5,7 +5,7 @@ RSpec.describe 'Users API' do
     it "Registers users" do
       post '/api/v1/users', params:
       {
-        email: 'Jay@test.com',
+        email: 'Jay1@test.com',
         password: '123456',
         password_confirmation: '123456'
       }
@@ -27,7 +27,7 @@ RSpec.describe 'Users API' do
 
     it 'Returns an error message: passwords dont match', :vcr do
       post '/api/v1/users', params: {
-        email: 'Jay@test.com',
+        email: 'Jay1@test.com',
         password: '123456',
         password_confirmation: '1'
       }
