@@ -33,7 +33,9 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: bundle install
+          command: 
+            gem install bundler:2.2.19
+            bundle install
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
