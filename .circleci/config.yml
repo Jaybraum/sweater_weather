@@ -13,7 +13,7 @@ jobs:
       - image: postgres:13.2
         environment:
           POSTGRES_USER: circleci
-          POSTGRES_DB: sweater_weather_development
+          POSTGRES_DB: sweater_weather_test
           POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
@@ -27,7 +27,7 @@ jobs:
       - image: postgres:13.2
         environment:
           POSTGRES_USER: circleci
-          POSTGRES_DB: sweater_weather_development
+          POSTGRES_DB: sweater_weather_test
           POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
