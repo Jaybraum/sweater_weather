@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Database Setup
           command: 
-            bundle exec rails db:schema:load --trace
+            bundle exec rake db:schema:load --trace
           environment:
             DATABASE_URL: "postgres://sweater_weather@localhost:5432/sweater_weather_test"
       - run:
