@@ -10,7 +10,7 @@ jobs:
         environment:
           PG_HOST: localhost
           PG_USER: circleci
-      - image: postgres:13.2
+      - image: circleci/postgres:13.2
         environment:
           POSTGRES_USER: sweater_weather
           POSTGRES_DB: sweater_weather_test
@@ -26,3 +26,7 @@ jobs:
               bundle exec rake db:migrate
             environment:
               DATABASE_URL: "postgres://sweater_weather@localhost:5432/sweater_weather_test"
+        - run:
+            name: Test
+            command:
+              bundle exec rspec spec
