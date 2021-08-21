@@ -26,4 +26,4 @@ jobs:
               bundle exec rake db:create
               bundle exec rake db:migrate
             environment:
-              DATABASE_URL: "postgres://circleci@localhost:5432/sweater_weather_development"
+              DATABASE_URL: "postgres://sweater_weather@localhost:5432/sweater_weather_test"
