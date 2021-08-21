@@ -29,7 +29,6 @@ jobs:
           POSTGRES_USER: circleci
           POSTGRES_DB: sweater_weather_test
           POSTGRES_HOST_AUTH_METHOD: trust
-          DATABASE_URL: "postgres://circleci@localhost:5432/sweater_weather_test"
     steps:
       - checkout
       - run: sudo apt-get update
@@ -46,6 +45,8 @@ jobs:
           command: |
             bundle exec rake db:schema:load --trace RAILS_ENV=test
             bundle exec rake db:migrate RAILS_ENV=test
+          environment:  
+            DATABASE_URL: "postgres://circleci@localhost:5432/sweater_weather_test"
       - run:
           name: Test
           command:
