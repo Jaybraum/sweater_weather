@@ -38,10 +38,7 @@ jobs:
           name: Install dependencies
           command: 
             gem install bundler:2.2.19
-      - run: bundle install
-      - run:
-          name: Wait for DB
-          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run: bundle instal
       - run:
           name: Database Setup
           command: |
@@ -49,6 +46,9 @@ jobs:
             bundle exec rake db:migrate RAILS_ENV=test
           environment:
             DATABASE_URL: "postgres://circleci@localhost:5432/sweater_weather_test"
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: Test
           command:
