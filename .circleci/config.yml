@@ -41,7 +41,7 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: Database Setup
-          command: 
+          command: |
             bundle exec rake db:schema:load --trace RAILS_ENV=test
             bundle exec rake db:migrate RAILS_ENV=test
           environment:
