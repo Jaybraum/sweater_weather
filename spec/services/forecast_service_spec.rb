@@ -19,7 +19,6 @@ RSpec.describe ForecastService do
           expect(current[:pressure]).to be_a(Integer)
           expect(current[:humidity]).to be_a(Integer)
           expect(current[:dew_point]).to be_a(Float)
-          expect(current[:uvi]).to be_a(Float)
           expect(current[:clouds]).to be_a(Integer)
           expect(current[:visibility]).to be_a(Integer)
           expect(current[:wind_speed]).to be_a(Float)
