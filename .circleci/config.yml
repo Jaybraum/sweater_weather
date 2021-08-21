@@ -56,11 +56,9 @@ workflows:
           requires:
             - build
       - heroku/deploy-via-git:
-          app-name: drink-this-backend
+          app-name: obscure-sands-66585
           requires:
             - test
           filters:
             branches:
               only: main
-
-            
