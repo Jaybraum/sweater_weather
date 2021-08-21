@@ -44,3 +44,20 @@ jobs:
           name: Test
           command:
             bundle exec rspec spec
+
+workflows:
+  heroku_deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+          app-name: drink-this-backend
+          requires:
+            - test
+          filters:
+            branches:
+              only: main
+            
+            
