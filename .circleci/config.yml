@@ -17,3 +17,4 @@ jobs:
           POSTGRES_PASSWORD: <%= ENV['SWEATER_WEATHER_DATABASE_PASSWORD'] %>
     steps:
         - checkout
+        - run: bundle install
