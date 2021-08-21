@@ -13,7 +13,7 @@ jobs:
       - image: postgres:13.2
         environment:
           POSTGRES_USER: circleci
-          POSTGRES_DB: sweater_weather_test
+          POSTGRES_DB: sweater_weather_development
           POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
@@ -27,7 +27,7 @@ jobs:
       - image: postgres:13.2
         environment:
           POSTGRES_USER: circleci
-          POSTGRES_DB: sweater_weather_test
+          POSTGRES_DB: sweater_weather_development
           POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
@@ -42,10 +42,8 @@ jobs:
       - run:
           name: Database Setup
           command: |
-            bundle exec rake db:create db:schema:load --trace
-            bundle exec rake db:migrate
-          environment:
-            DATABASE_URL: "postgres://circleci@localhost:5432/sweater_weather_test"
+            bundle exec rake db:create db:schema:load --trace RAILS_ENV=test
+            bundle exec rake db:migrate RAILS_ENV=test
       - run:
           name: Test
           command:
