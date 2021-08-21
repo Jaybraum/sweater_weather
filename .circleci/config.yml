@@ -42,8 +42,8 @@ jobs:
       - run:
           name: Database Setup
           command: |
-            bundle exec rake db:create db:schema:load --trace RAILS_ENV=test
-            bundle exec rake db:migrate RAILS_ENV=test
+            bundle exec rake db:create db:schema:load --trace
+            bundle exec rake db:migrate
           environment:
             DATABASE_URL: "postgres://circleci@localhost:5432/sweater_weather_test"
       - run:
