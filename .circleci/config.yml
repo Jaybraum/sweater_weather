@@ -6,7 +6,7 @@ jobs:
   build:
     working_directory: ~/sweater_weather
     docker:
-      - image: cimg/ruby:2.7.2-node-browsers
+      - image: cimg/ruby:2.7.2
         environment:
           PG_HOST: localhost
           PG_USER: circleci
@@ -21,7 +21,7 @@ jobs:
     
   test:
     docker:
-      - image: cimg/ruby:2.7.2-node-browsers
+      - image: cimg/ruby:2.7.2
         environment:
           PG_HOST: localhost
           PG_USER: circleci
