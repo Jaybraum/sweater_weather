@@ -12,8 +12,8 @@ jobs:
           PG_USER: circleci
       - image: postgres:13.3
         environment:
-          POSTGRES_USER: circleci
-          POSTGRES_DB: drink-this-backend_test
-          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_USER: sweater_weather
+          POSTGRES_DB: sweater_weather_test
+          POSTGRES_PASSWORD: ""
     steps:
-      - checkout
+        - checkout
