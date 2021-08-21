@@ -4,7 +4,9 @@ rbenv:
 addons:
   postgresql: 9.6
 script:
-- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle install --jobs=3 --retry=3
+- bundle exec rake db:create RAILS_ENV=test
+- bundle exec rake db:migrate RAILS_ENV=test
 - bundle exec rspec --require spec_helper
 deploy:
   provider: heroku
