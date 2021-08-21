@@ -16,17 +16,31 @@ jobs:
           POSTGRES_DB: sweater_weather_test
           POSTGRES_PASSWORD: <%= ENV['SWEATER_WEATHER_DATABASE_PASSWORD'] %>
     steps:
-        - checkout
-        - run:
-            name: Install dependencies
-            command: bundle install
-        - run:
-            name: Database Setup
-            command: 
-              bundle exec rake db:migrate
-            environment:
-              DATABASE_URL: "postgres://sweater_weather@localhost:5432/sweater_weather_test"
-        - run:
-            name: Test
-            command:
-              bundle exec rspec spec
+      - checkout
+    
+  test:
+    docker:
+      - image: cimg/ruby:2.7.2
+        environment:
+          PG_HOST: localhost
+          PG_USER: circleci
+      - image: circleci/postgres:13.2
+        environment:
+          POSTGRES_USER: sweater_weather
+          POSTGRES_DB: sweater_weather_test
+          POSTGRES_PASSWORD: <%= ENV['SWEATER_WEATHER_DATABASE_PASSWORD'] %>
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: bundle install
+      - run:
+          name: Database Setup
+          command: 
+            bundle exec rake db:migrate
+          environment:
+            DATABASE_URL: "postgres://sweater_weather@localhost:5432/sweater_weather_test"
+      - run:
+          name: Test
+          command:
+            bundle exec rspec spec
