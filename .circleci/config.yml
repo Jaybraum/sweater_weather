@@ -18,3 +18,4 @@ jobs:
     steps:
         - checkout
         - run: bundle install
+        - run: bundle exec rspec spec
