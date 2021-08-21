@@ -31,18 +31,18 @@ jobs:
           POSTGRES_PASSWORD: <%= ENV['SWEATER_WEATHER_DATABASE_PASSWORD'] %>
     steps:
       - checkout
-      - run: bundle install
       - run:
           name: Install dependencies
           command: 
             gem install bundler:2.2.19
+      - run: bundle install
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: Database Setup
           command: 
-            bundle exec rails db:migrate
+            bundle exec rails db:schema:load --trace
           environment:
             DATABASE_URL: "postgres://sweater_weather@localhost:5432/sweater_weather_test"
       - run:
