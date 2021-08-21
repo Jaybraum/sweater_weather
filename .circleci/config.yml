@@ -10,11 +10,10 @@ jobs:
         environment:
           PG_HOST: localhost
           PG_USER: circleci
-      - image: postgres:13.3-alpine
+      - image: postgres:13.2
         environment:
           POSTGRES_USER: circleci
           POSTGRES_DB: sweater_weather_test
-          POSTGRES_PORT: 5432
           POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
@@ -25,12 +24,11 @@ jobs:
         environment:
           PG_HOST: localhost
           PG_USER: circleci
-      - image: postgres:13.3-alpine
+      - image: postgres:13.2
         environment:
           POSTGRES_USER: circleci
           POSTGRES_DB: sweater_weather_test
           POSTGRES_HOST_AUTH_METHOD: trust
-          PGHOST: 127.0.0.1
           DATABASE_URL: "postgres://circleci@localhost:5432/sweater_weather_test"
     steps:
       - checkout
