@@ -45,6 +45,7 @@ jobs:
             bundle exec rake db:migrate RAILS_ENV=test
           environment:
             DATABASE_URL: "postgres://sweater_weather@localhost:5432/sweater_weather_test"
+      - run: bundle exec rake db:schema:load --trace RAILS_ENV=test      
       - run:
           name: Test
           command:
