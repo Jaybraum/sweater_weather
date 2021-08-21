@@ -6,11 +6,11 @@ jobs:
   build:
     working_directory: ~/sweater_weather
     docker:
-      - image: cimg/ruby:2.7.2
+      - image: cimg/ruby:2.7.2-node-browsers
         environment:
           PG_HOST: localhost
           PG_USER: circleci
-      - image: postgres:13.3
+      - image: postgres:13.3-alpine
         environment:
           POSTGRES_USER: circleci
           POSTGRES_DB: sweater_weather_test
@@ -21,16 +21,17 @@ jobs:
     
   test:
     docker:
-      - image: cimg/ruby:2.7.2
+      - image: cimg/ruby:2.7.2-node-browsers
         environment:
           PG_HOST: localhost
           PG_USER: circleci
-      - image: postgres:13.3
+      - image: postgres:13.3-alpine
         environment:
           POSTGRES_USER: circleci
           POSTGRES_DB: sweater_weather_test
           POSTGRES_HOST_AUTH_METHOD: trust
           PGHOST: 127.0.0.1
+          DATABASE_URL: "postgres://circleci@localhost:5432/sweater_weather_test"
     steps:
       - checkout
       - run: sudo apt-get update
@@ -40,12 +41,13 @@ jobs:
             gem install bundler:2.2.19
       - run: bundle install
       - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
+      - run:
           name: Database Setup
           command: |
             bundle exec rake db:schema:load --trace RAILS_ENV=test
             bundle exec rake db:migrate RAILS_ENV=test
-          environment:
-            DATABASE_URL: "postgres://circleci@localhost:5432/sweater_weather_test"
       - run:
           name: Test
           command:
