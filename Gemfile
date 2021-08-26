@@ -43,7 +43,6 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'shoulda-matchers'
-  gem 'travis'
 
 
 end

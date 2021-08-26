@@ -22,6 +22,7 @@ RSpec.describe 'Forecast API' do
       expect(current_forecast[:temperature]).to be_an(Float)
       expect(current_forecast[:feels_like]).to be_an(Float)
       expect(current_forecast[:humidity]).to be_an(Integer)
+      expect(current_forecast[:uvi]).to be_an(Float)
       expect(current_forecast[:visibility]).to be_an(Integer)
       expect(current_forecast[:conditions]).to be_an(String)
       expect(current_forecast[:icon]).to be_an(String)
