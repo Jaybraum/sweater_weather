@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Sessions API' do
   describe 'Post /sessions' do
-    xit "Logs user in" do
+    it "Logs user in" do
       post '/api/v1/sessions', params: {
         email: "whatever@example.com",
         password: "password",
@@ -23,7 +23,7 @@ RSpec.describe 'Sessions API' do
       expect(user_data[:api_key]).to be_an(String)
     end
 
-    xit 'Returns an error message', :vcr do
+    it 'Returns an error message', :vcr do
       post '/api/v1/sessions', params: {
         email: "whatever@example.com",
         password: 000
