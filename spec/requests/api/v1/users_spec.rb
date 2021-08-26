@@ -39,7 +39,7 @@ RSpec.describe 'Users API' do
       expect(response_body).to eq({error: 'Invalid Credentials'})
     end
 
-    it 'Returns an error message: email inuse', :vcr do
+    xit 'Returns an error message: email inuse', :vcr do
       post '/api/v1/users', params: {
         email: "whatever@example.com",
         password: '123456',
