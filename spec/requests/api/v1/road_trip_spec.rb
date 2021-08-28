@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Roadtrip API' do
   describe 'GET /road_trip' do
-    xit "Returns road_trip data formatted", :vcr do
+    it "Returns road_trip data formatted", :vcr do
       post '/api/v1/road_trip', params:
       {
         origin: 'Brooklyn, NY',
@@ -31,7 +31,7 @@ RSpec.describe 'Roadtrip API' do
       expect(weather_at[:conditions]).to be_an(String)
     end
 
-    xit 'Returns impossible response', :vcr do
+    it 'Returns impossible response', :vcr do
       post '/api/v1/road_trip', params:
       {
         origin: 'Brooklyn, NY',
