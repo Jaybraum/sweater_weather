@@ -41,7 +41,13 @@ RSpec.describe 'Users API' do
 
     it 'Returns an error message: email inuse', :vcr do
       post '/api/v1/users', params: {
-        email: "whatever@example.com",
+        email: "Jay1@test.com",
+        password: '123456',
+        password_confirmation: '123456'
+      }
+
+      post '/api/v1/users', params: {
+        email: "Jay1@test.com",
         password: '123456',
         password_confirmation: '123456'
       }
