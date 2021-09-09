@@ -21,7 +21,6 @@ RSpec.describe ForecastService do
           expect(current[:dew_point]).to be_a(Float)
           expect(current[:clouds]).to be_a(Integer)
           expect(current[:visibility]).to be_a(Integer)
-          expect(current[:wind_speed]).to be_a(Integer)
           expect(current[:wind_deg]).to be_a(Integer)
 
           expect(response[:current][:weather]).to be_an(Array)
@@ -91,7 +90,6 @@ RSpec.describe ForecastService do
           expect(daily_weather[:icon]).to be_a(String)
 
           expect(daily[:clouds]).to be_a(Integer)
-          expect(daily[:pop]).to be_a(Float)
           expect(daily[:rain]).to be_a(Float)
           expect(daily[:uvi]).to be_a(Float)
       end
