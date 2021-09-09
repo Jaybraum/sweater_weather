@@ -4,8 +4,8 @@ RSpec.describe 'Sessions API' do
   describe 'Post /sessions' do
     it "Logs user in" do
       post '/api/v1/sessions', params: {
-        email: "whatever@example.com",
-        password: "password",
+        email: "Jay1@test.com",
+        password: "123456",
       }
 
       expect(response).to have_http_status(200)
@@ -25,7 +25,7 @@ RSpec.describe 'Sessions API' do
 
     it 'Returns an error message', :vcr do
       post '/api/v1/sessions', params: {
-        email: "whatever@example.com",
+        email: "Jay1@test.com",
         password: 000
       }
 
